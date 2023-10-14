@@ -1,4 +1,7 @@
 
+
+
+--------------------**INSTALACIONES**-----------------
 1. Montar proyexto
 <code>npx create-next-app testing-app</code>
 
@@ -51,3 +54,49 @@ npm install --save-dev @testing-library/user-event
   }
 
 
+
+-------------------**FICHEROS**--------------------
+7. Si no existe ese fichero en tu protecto: Crear fichero llamado .babelrc (sin nombre) que tenga el siguiente código:
+Si hay fichero babel.config.js dentro del proyecto: añadir:
+```javascript
+{
+    "presets": ["@babel/preset-react", "@babel/preset-env"]
+}
+```
+
+8. Añadir en el package.json un script para lanzar los test
+
+```javascript
+{
+  ...
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest" //-> Este es el nuevo script que hemos añadido.
+  },
+  "dependencies": {
+    ...
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-react": "^7.22.15",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.5.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
+```
+
+9. Crear fichero jest.config.js (para configurar Jest y poder lanzar RTL).
+```javascript
+module.exports = {
+  // Configuraciónes de Jest
+  testEnvironment: 'jsdom',
+    transform: {
+        '^.+\\.(js|jsx)$': 'babel-jest',
+      },
+};
+```
