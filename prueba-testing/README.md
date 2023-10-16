@@ -2,11 +2,11 @@
 
 
 --------------------**INSTALACIONES**-----------------
-1. Montar proyexto
+1. Montar proyecto
 <code>npx create-next-app testing-app</code>
 
 
-*Comprobar Jest instalado en package.json que existee: 
+*Comprobar Jest instalado en package.json que existe: 
 "devDependencies": {
     "jest": "^29.7.0"
   }
